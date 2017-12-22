@@ -13,13 +13,13 @@ class NavBar extends React.Component {
           <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"/>
           </button>
-          {/*<a className="navbar-brand" href="#">Org</a>*/}
+          <a className="navbar-brand" href="#">Org</a>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
                 <div className="nav-link">
-                  <NavLink to="/" style={{color: "white"}} activeClassName="active">Home</NavLink>
+                  <NavLink to="/" style={{color: "white"}}>Home</NavLink>
                 </div>
               </li>
               <li className="nav-item">
