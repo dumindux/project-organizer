@@ -1,39 +1,50 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink as RRNavLink } from 'react-router-dom';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink} from 'reactstrap';
 
 class NavBar extends React.Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
 
   render() {
     return (
       <div>
-        <nav className="navbar navbar-toggleable-md navbar-inverse bg-inverse" style={{"minWidth": "450px"}}>
-          <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"/>
-          </button>
-          <a className="navbar-brand" href="#">Org</a>
-
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
-                <div className="nav-link">
-                  <NavLink to="/" style={{color: "white"}}>Home</NavLink>
-                </div>
-              </li>
-              <li className="nav-item">
-                <div className="nav-link">
-                  <NavLink to="/about" style={{color: "white"}}>About</NavLink>
-                </div>
-              </li>
-            </ul>
-            <form className="form-inline my-2 my-lg-0">
+        <Navbar className="navbar-dark bg-dark" expand="md">
+          <NavbarBrand href="/">Org</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav navbar>
+              <NavItem>
+                <NavLink exact activeClassName="active" tag={RRNavLink} to="/" >Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink exact activeClassName="active" tag={RRNavLink} to="/about">About</NavLink>
+              </NavItem>
+            </Nav>
+            <form className="form-inline my-2 my-lg-0 ml-auto">
               <input className="form-control mr-sm-2" type="text" placeholder="Search"/>
-              <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-          </div>
-        </nav>
+          </Collapse>
+        </Navbar>
       </div>
     );
   }
