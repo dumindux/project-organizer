@@ -1,0 +1,44 @@
+.bullet-repo::before {
+  content: "\f171";
+  line-height: 24px;
+  font-family: FontAwesome;
+  font-size: 12px;
+  float: left;
+  margin-right: 5px;
+}
+
+.bullet-contributor::before {
+  content: "\f2c0";
+  line-height: 24px;
+  font-family: FontAwesome;
+  font-size: 12px;
+  float: left;
+  margin-right: 5px;
+}
+
+.bullet-release::before {
+  content: "\f005";
+  line-height: 24px;
+  font-family: FontAwesome;
+  font-size: 12px;
+  float: left;
+  margin-right: 5px;
+}
+
+.bullet-jira::before {
+  content: "\f06d";
+  line-height: 24px;
+  font-family: FontAwesome;
+  font-size: 12px;
+  float: left;
+  margin-right: 5px;
+}
+
+.bullet-wiki::before {
+  content: "\f02d";
+  line-height: 24px;
+  font-family: FontAwesome;
+  font-size: 12px;
+  float: left;
+  margin-right: 5px;
+}
