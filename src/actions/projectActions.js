@@ -4,6 +4,10 @@ export function loadProjectsSuccess(projects) {
   return { type: 'LOAD_PROJECTS_SUCCESS', projects };
 }
 
+export function updateSearchText(searchText) {
+  return { type: 'UPDATE_SEARCH_TEXT', searchText };
+}
+
 export function loadProjects() {
   return function (dispatch) {
     return projectsApi.getAllProjects()

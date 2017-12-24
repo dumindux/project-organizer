@@ -10,6 +10,10 @@ import{
 } from 'reactstrap';
 
 class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const cols = [];
     for (let i = 0; i < this.props.projects.length; i += 3) {
@@ -32,12 +36,14 @@ class HomePage extends React.Component {
 
 HomePage.propTypes = {
   actions: PropTypes.object.isRequired,
-  projects: PropTypes.array.isRequired
+  projects: PropTypes.array.isRequired,
+  searchText: PropTypes.string.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    projects: state.projects
+    projects: state.projects,
+    searchText: state.searchText
   };
 }
 
