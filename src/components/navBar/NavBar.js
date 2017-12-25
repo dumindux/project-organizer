@@ -25,6 +25,7 @@ class NavBar extends React.Component {
 
     this.onChange = this.onChange.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   toggle() {
@@ -47,6 +48,11 @@ class NavBar extends React.Component {
     this.props.actions.updateSearchText(this.state.searchText);
   }
 
+  onSubmit(event){
+    event.preventDefault();
+    this.onClick();
+  }
+
   render() {
     return (
       <div>
@@ -62,7 +68,7 @@ class NavBar extends React.Component {
                 <NavLink exact activeClassName="active" tag={RRNavLink} to="/about">About</NavLink>
               </NavItem>
             </Nav>
-            <form className="form-inline my-2 my-lg-0 ml-auto">
+            <form className="form-inline my-2 my-lg-0 ml-auto" onSubmit={this.onSubmit}>
               <input className="form-control mr-sm-2" type="text" placeholder="Search" value={this.state.searchText} onChange={this.onChange}/>
                 <input type="button" className="btn btn-outline-success my-2 my-sm-0" value="Search" onClick={this.onClick}/>
             </form>
