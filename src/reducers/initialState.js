@@ -1,4 +1,5 @@
 export default {
   projects: [],
-  searchText: ''
+  searchText: '',
+  project: null
 };

@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as projectActions from '../../actions/projectActions';
 import PropTypes from 'prop-types';
 import ProjectCard from './ProjectCard';
+import ProjectModal from '../project/ProjectModal';
 import{
   Row,
   Col
@@ -12,6 +13,7 @@ import{
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
+    this.props.actions.updateSearchText('');
   }
 
   render() {
@@ -28,8 +30,9 @@ class HomePage extends React.Component {
     return (
       <div>
         {cols.map((row, index) => {
-          return <Row key={index} style={{"marginTop": "20px"}}>{row}</Row>;
+          return <Row key={index} className="projects-row">{row}</Row>;
         })}
+        <ProjectModal/>
       </div>
     );
   }

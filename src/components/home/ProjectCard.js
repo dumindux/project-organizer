@@ -9,25 +9,22 @@ import {
 
 const ProjectCard = (props) => {
   return (
-    <Card style={{width: "419px",  height: "192px"}}>
+    <Card className="project-card">
       <CardBody>
-        <div style={{height: "150px", display: "table", "alignItems": "center",float: "left"}}>
-          <img src={"data:image/png;base64, " + props.project.image} style={{width: "150px", height: "150px"}} />
-        </div>
-        <div style={{height: "150px",display: "table", float: "right"}}>
-          <div style={{display: "table-cell", "verticalAlign": "middle"}}>
-            <CardTitle style={{"fontSize": "14px", "fontWeight": "bold","width": "200px", "textOverflow": "ellipsis","overflow": "hidden" , "height": "30px"}}>
-              {props.project.name}
-            </CardTitle>
-            <CardText tag="div">
-              <p>Current production release</p>
-              <ul><li>{props.project.currentProductionRelease}</li></ul>
-              <div>
-                <span style={{color: "blue"}}>View more</span>
-                <span style={{float: "right", color: "blue"}}>Edit</span>
-              </div>
-            </CardText>
-          </div>
+        <img src={"data:image/png;base64, " + props.project.image} className="project-card-image" />
+
+        <div className="project-card-text-block">
+          <CardTitle className="project-card-title">
+            {props.project.name}
+          </CardTitle>
+          <CardText tag="div">
+            <p>Current production release</p>
+            <ul><li>{props.project.currentProductionRelease}</li></ul>
+            <div>
+              <span style={{color: "blue"}}>View more</span>
+              <span style={{float: "right", color: "blue"}}>Edit</span>
+            </div>
+          </CardText>
         </div>
       </CardBody>
     </Card>

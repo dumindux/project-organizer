@@ -42,3 +42,46 @@
   float: left;
   margin-right: 5px;
 }
+
+.list-margin-top {
+  margin-top: 5px;
+}
+
+.img-margin-right {
+  margin-right: 5px;
+}
+
+.remove-list-style {
+  list-style: none;
+}
+
+.topic-vertical-align {
+  vertical-align: middle;
+}
+
+.projects-row {
+  margin-top: 20px;
+}
+
+.project-card {
+  width: 419px;
+  height: 192px;
+}
+
+.project-card-image {
+  width: 150px;
+  height: 150px;
+}
+
+.project-card-text-block {
+  height: 150px;
+  float: right;
+}
+
+.project-card-title {
+  font-size: 14px;
+  font-weight: bold;
+  width: 200px;
+  overflow: hidden;
+  height: 30px;
+}
