@@ -4,7 +4,8 @@ import {
   Card,
   CardBody,
   CardTitle,
-  CardText
+  CardText,
+  Button
 } from 'reactstrap';
 
 const ProjectCard = (props) => {
@@ -21,8 +22,8 @@ const ProjectCard = (props) => {
             <p>Current production release</p>
             <ul><li>{props.project.currentProductionRelease}</li></ul>
             <div>
-              <span style={{color: "blue"}}>View more</span>
-              <span style={{float: "right", color: "blue"}}>Edit</span>
+              <Button color="link" style={{padding: "0px"}} onClick={() => props.onClick(props.project.key)}>View more</Button>
+              {/*<Button color="link" style={{padding: "0px", float: "right"}}>Edit</Button>*/}
             </div>
           </CardText>
         </div>
@@ -32,7 +33,8 @@ const ProjectCard = (props) => {
 };
 
 ProjectCard.propTypes = {
-  project: PropTypes.object.isRequired
+  project: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default ProjectCard;

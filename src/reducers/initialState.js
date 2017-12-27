@@ -1,5 +1,8 @@
 export default {
   projects: [],
   searchText: '',
-  project: null
+  project: {
+    project: null,
+    show: false
+  }
 };

@@ -14,6 +14,12 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.props.actions.updateSearchText('');
+    this.onClickViewMore = this.onClickViewMore.bind(this);
+  }
+
+  onClickViewMore(key) {
+    this.props.actions.showModal(true);
+    this.props.actions.setProject(key);
   }
 
   render() {
@@ -23,7 +29,7 @@ class HomePage extends React.Component {
       cols.push([]);
       for (let j = i; (j < i+3) && (j < projectsToRender.length); j++) {
         cols[cols.length - 1].push(<Col key={projectsToRender[j].key} xs={12} md ={4}>
-          <ProjectCard project={projectsToRender[j]}/>
+          <ProjectCard project={projectsToRender[j]} onClick={this.onClickViewMore}/>
         </Col>);
       }
     }
