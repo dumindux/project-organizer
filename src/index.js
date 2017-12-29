@@ -7,6 +7,7 @@ import { BrowserRouter} from 'react-router-dom';
 import App from './components/App';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import {loadProjects} from './actions/projectActions';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 import './styles/styles.css';
 
 const store = configureStore();
